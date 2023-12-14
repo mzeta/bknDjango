@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main>
+    <div>
+        <h1>Nuestros Profesionales</h1>
+        <h2><a href="{% url 'walkers:create' %}">Crear</a></h2>
+        {% for walker in walker_list%}
+        <div class="list">
+           <fieldset>
+            <legend> Nombre: {{walker.name}}</legend>
+            <ul>
+                <li><img src="{% static '.{{walker.image}}' %}" alt="logo"></li>
+                <li>{{walker.image}}</li>
+                <li>Resumen: {{walker.resume}}</li>
+                <li>Servicio que ofrece: {{walker.service}}</li>
+            </ul>
+            <span style="margin: 5px 5px 5px 150px;">
+            <a style="color:blue;font-size: large;" href="{% url 'walkers:update' walker.id %}">Editar</a>
+            </span>
+            <span style="margin: 5px 5px 5px 150px;">
+             <a style="color:red;font-size: large;" href="{% url 'walkers:delete' walker.id %}">Eliminar</a>
+            </span>
+            
+        </div>
+           </fieldset>
+        </div>
+
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

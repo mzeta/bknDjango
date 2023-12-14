@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+    <div>
+        <h1>Estas seguro ue deseas borrar este profesional?</h1>
+        <h2>{{Walker.name}}</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div>{{form.as_p}}</div>
+            <input type="submit" value="{{ tipo }}" />
+        </form>
+
+        <a href="{% url 'walkers:all' %}">Cancelar</a>
+    </div>
+</main>
+{% endblock %}

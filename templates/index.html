@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+    <main class="main-container">
+        <section class="service-collection container">
+            <article class="service-collection__content">
+                    <h2 class="service-collection__title">Bienvenido al administrador de HappyPaws</h2>
+                    <p class="service-collection__text">Desde esta sección podrás dar de alta, baja o modificar a los profesionales que trabajan con nosotros.</p>
+                    <a class="service-collection__link" href="#">COMENZAR</a>
+            </article>
+            <picture class="collection__cover">
+                <img src="{% static './media/images/paseo_pg.jpeg' %}" alt="Imagen del servicio de paseos">
+            </picture>
+        </section>
+        <table class="table-resume container">
+            <tr>
+            <td class="table-headers" colspan="2">Nuestros profesionales</td>
+             </tr>
+            <tbody id="data-output">
+                <!--populated from JS-->
+            </tbody>
+        </table>
+    </main>
+    {% endblock %}

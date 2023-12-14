@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <div>{{form.as_div}}</div>
+            <input type="submit" value="{{ tipo }}" />
+        </form>
+
+        <a href="{% url 'walkers:all' %}">Volvamos al Inicio</a>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static './media/images/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static './media/images/favicon.ico' %}" type="image/x-icon"> 
+    <title>Paseos | Codo23 Comision 23506 - Grupo 22</title>
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+</head>
+<body>
+    
+    <header> <!-- Inicio Header-->
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="/">
+                    <img src="{% static './media/images/logo.png' %}" alt="logo">
+                </a>
+            </picture>
+           <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{% url 'index' %}">HOME</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{% url 'walkers:all' %}">CRUD</a>
+                </li>
+                
+           </ul>    
+        </nav>      
+    </header> <!-- Fin Header-->
+    <div class="post_header_line"></div>    
+    
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer">
+        <section class="footer-links">
+            <ul class="footer-links__list">
+                <li><a class="footer-links__link" href="./nosotros">Nosotros</a></li>
+                <li><a class="footer-links__link" href="./reservas">Contacto</a></li>
+                <li><a class="footer-links__link" href="">Redes Sociales</a></li>
+            </ul>
+        </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script src="{% static './js/resume.js' %}" type="text/javascript"></script>
+</body>
+</html>
